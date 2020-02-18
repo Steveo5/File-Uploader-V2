@@ -9,7 +9,7 @@
                          @dragleave.prevent="onDragEnd"
                          @drop.stop.prevent="onDrop"
                          :class="{ 'is-dragging-over': isDraggingOver }">
-                        <img src="/images/icons/cloud.svg" />
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud-upload-alt" class="svg-inline--fa fa-cloud-upload-alt fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="#4390bc" d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zM393.4 288H328v112c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V288h-65.4c-14.3 0-21.4-17.2-11.3-27.3l105.4-105.4c6.2-6.2 16.4-6.2 22.6 0l105.4 105.4c10.1 10.1 2.9 27.3-11.3 27.3z"></path></svg>
                         <input type="file" ref="file" @change="onFormInput" multiple>
                         <p>Drag and drop or <span @click="$refs.file.click()">browse</span> files to upload</p>
                     </div>
@@ -21,6 +21,8 @@
                         <!--<img v-if="file.type.includes('svg')" src="'/images/icons/svg.svg'" />-->
                         <!--<img v-else-if="file.type.includes('gzip')" src="'/images/icons/gzip.svg'" />-->
                         <!--<img v-else="file.type.includes('svg')" src="'/images/icons/blank-file.svg'" />-->
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 317.001 317.001" style="enable-background:new 0 0 317.001 317.001;" fill="#3490dc" xml:space="preserve"> <path d="M270.825,70.55L212.17,3.66C210.13,1.334,207.187,0,204.093,0H55.941C49.076,0,43.51,5.566,43.51,12.431V304.57 c0,6.866,5.566,12.431,12.431,12.431h205.118c6.866,0,12.432-5.566,12.432-12.432V77.633 C273.491,75.027,272.544,72.51,270.825,70.55z M55.941,305.073V12.432H199.94v63.601c0,3.431,2.78,6.216,6.216,6.216h54.903l0.006,222.824H55.941z"/></svg>
+
                         <div class="file-details">
                             <p>{{ file.name }}</p>
                             <div class="file-upload-bar">
@@ -66,7 +68,7 @@
             align-items: center;
             margin-top: 10px;
 
-            img {
+            svg {
                 margin-right: 15px;
                 width: 50px;
             }
@@ -204,7 +206,7 @@
                         }
                     }
 
-                    img {
+                    svg {
                         width: 70px;
                     }
 
@@ -225,8 +227,7 @@
         props: {
             postUrl: {
                 type: String,
-                required: false,
-                default: 'http://laravel-test-bench.test/file/upload'
+                required: true
             },
             minFileSize:  {
                 type: Number,
