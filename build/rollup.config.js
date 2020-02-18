@@ -12,11 +12,10 @@ const argv = minimist(process.argv.slice(2));
 const config = {
     input: "src/entry.js",
     output: {
-        name: "FileUploaaderV2",
+        name: "FileUploaderV2",
         exports: "named"
     },
     plugins: [
-        external,
         replace({
             "process.env.NODE_ENV": JSON.stringify("production")
         }),
