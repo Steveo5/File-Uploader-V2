@@ -1,5 +1,5 @@
 
-This is a simple Vue project that provides a drag and drop upload box.<br /> 
+This is a simple Vue project that provides a drag and drop upload box. It can be used to upload any types of files<br /> 
 There is some simple frontend validation included such as min/max file sizes and file types
 
 # Project structure
